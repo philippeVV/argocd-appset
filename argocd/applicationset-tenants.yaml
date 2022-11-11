@@ -16,7 +16,7 @@ spec:
               revision: HEAD
               directories:
               - path: '*'
-              - path: argocd/
+              - path: argocd
                 exclude: true
   template:
     metadata:
