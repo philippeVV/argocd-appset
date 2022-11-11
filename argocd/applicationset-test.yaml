@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: app-1
+  namespace: ops
+spec:
+  generators:
+  - clusters: {} # Automatically use all clusters defined within Argo CD
+  template:
+    metadata:
+      name: '{{name}}-app1' # 'name' field of the Secret
+    spec:
+      project: "default"
+      source:
+        repoURL: https://github.com/philippeVV/argocd-appset
+        targetRevision: HEAD
+        path: tenant-1/app1/
+      destination:
+        server: '{{server}}' # 'server' field of the secret
