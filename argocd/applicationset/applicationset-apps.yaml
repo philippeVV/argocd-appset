@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: app-1
+  namespace: ops
+spec:
+  generators:
+    - matrix:
+        generators:
+          - clusters:
+              selector:
+                matchLabels:
+                  argocd.argoproj.io/secret-type: cluster
+          - git:
+              repoURL: https://github.com/philippeVV/argocd-appset.git
+              revision: HEAD
+              files:
+              - path: argocd
+                exclude: true
+              - path: "**/dev.yaml"
+                exclude: true
+              - path: "**/staging.yaml"
+                exclude: true
+              - path: "**/production.yaml"
+                exclude: true
+              - path: "**/*.yaml"
+  template:
+    metadata:
+      name: '{{name}}-{{path.filename}}' # 'name' field of the Secret
+    spec:
+      project: "default"
+      source:
+        repoURL: https://github.com/philippeVV/argocd-appset
+        targetRevision: HEAD
+        path: tenant-1/app1/
+      destination:
+        server: '{{server}}' # 'server' field of the secret
+        namespace: '{{path[0]}}'
