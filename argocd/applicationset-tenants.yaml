@@ -14,7 +14,7 @@ spec:
         repoURL: https://github.com/philippeVV/argocd-appset.git
         revision: HEAD
         directories:
-        - path: *
+        - path: /
         - path: argocd/
           exclude: true
   template:
