@@ -28,6 +28,7 @@ spec:
         targetRevision: HEAD
         path: argocd/namespace/
         helm:
-          values: 'name: {{ path }}'
+          values: |
+            name: {{ path }}
       destination:
         server: '{{server}}' # 'server' field of the secret
