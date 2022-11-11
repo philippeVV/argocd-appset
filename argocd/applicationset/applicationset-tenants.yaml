@@ -20,7 +20,7 @@ spec:
                 exclude: true
   template:
     metadata:
-      name: '{{path}}-{{name}}' # path match from github folder and cluster name
+      name: '{{path.basename}}-{{name}}' # path match from github folder and cluster name
     spec:
       project: "default"
       source:
@@ -29,6 +29,6 @@ spec:
         path: argocd/namespace/
         helm:
           values: |
-            name: {{path}}
+            name: {{path.basename}}
       destination:
         server: '{{server}}' # 'server' field of the secret
