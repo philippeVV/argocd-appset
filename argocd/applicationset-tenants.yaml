@@ -5,19 +5,19 @@ metadata:
   namespace: ops
 spec:
   generators:
-  - matrix:
-      generators:
-        - clusters:
-            selector:
-              matchLabels:
-              argocd.argoproj.io/secret-type: cluster # Only remote cluster have this label. Once we have a self-manage argo, we can do it with our own label to exclude some clsuter.
-        - git:
-            repoURL: https://github.com/philippeVV/argocd-appset.git
-            revision: HEAD
-            directories:
-            - path: '*'
-            - path: argocd/
-              exclude: true
+    - matrix:
+        generators:
+          - clusters:
+              selector:
+                matchLabels:
+                argocd.argoproj.io/secret-type: cluster # Only remote cluster have this label. Once we have a self-manage argo, we can do it with our own label to exclude some clsuter.
+          - git:
+              repoURL: https://github.com/philippeVV/argocd-appset.git
+              revision: HEAD
+              directories:
+              - path: '*'
+              - path: argocd/
+                exclude: true
   template:
     metadata:
       name: '{{path}}-{{name}}' # path match from github folder and cluster name
