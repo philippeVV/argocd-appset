@@ -17,3 +17,4 @@ spec:
         path: tenant-1/app1/
       destination:
         server: '{{server}}' # 'server' field of the secret
+        namespace: tenant-1
