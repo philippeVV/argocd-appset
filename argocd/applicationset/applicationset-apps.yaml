@@ -18,13 +18,18 @@ spec:
               - path: "tenants/**/*.yaml"
   template:
     metadata:
-      name: '{{name}}-{{path.filename}}' # 'name' field of the Secret
+      name: '{{name}}-{{path[2]}}' # 'name' field of the Secret
     spec:
       project: "default"
       source:
         repoURL: https://github.com/philippeVV/argocd-appset
         targetRevision: HEAD
-        path: '{{path}}'
+        path: '{{path[0]}}/{{path[1]}}/{{path[2]}}/{{path[3]}}'
+        helm:
+          valueFiles:
+            - '{{name}}.yaml'
+
+
       destination:
         server: '{{server}}' # 'server' field of the secret
         namespace: '{{path[1]}}'
