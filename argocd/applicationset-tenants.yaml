@@ -29,6 +29,6 @@ spec:
         path: argocd/namespace/
         helm:
           values: |
-            name: {{ path }}
+            name: '{{path}}'
       destination:
         server: '{{server}}' # 'server' field of the secret
