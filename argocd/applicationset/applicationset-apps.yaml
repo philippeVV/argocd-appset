@@ -15,15 +15,7 @@ spec:
               repoURL: https://github.com/philippeVV/argocd-appset.git
               revision: HEAD
               files:
-              - path: argocd
-                exclude: true
-              - path: "**/dev.yaml"
-                exclude: true
-              - path: "**/staging.yaml"
-                exclude: true
-              - path: "**/production.yaml"
-                exclude: true
-              - path: "**/*.yaml"
+              - path: "tenants/**/*.yaml"
   template:
     metadata:
       name: '{{name}}-{{path.filename}}' # 'name' field of the Secret
