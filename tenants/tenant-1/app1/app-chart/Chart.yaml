@@ -1,5 +1,0 @@
-apiVersion: v2
-name: create-namespace
-description: Create namespace
-type: application
-version: 0.0.1

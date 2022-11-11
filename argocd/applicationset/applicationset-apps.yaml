@@ -14,17 +14,18 @@ spec:
           - git:
               repoURL: https://github.com/philippeVV/argocd-appset.git
               revision: HEAD
-              files:
-              - path: "tenants/**/*.yaml"
+              directories:
+              - path: 'tenants/**/*'
   template:
     metadata:
-      name: '{{name}}-{{path[2]}}' # 'name' field of the Secret
+      name: '{{name}}-{{path.basename}}' # 'name' field of the Secret
     spec:
       project: "default"
       source:
-        repoURL: https://github.com/philippeVV/argocd-appset
+        chart: nginx-helmchart
+        repoURL: https://github.com/philippeVV/nginx-helmchart
         targetRevision: HEAD
-        path: '{{path[0]}}/{{path[1]}}/{{path[2]}}/{{path[3]}}'
+        path: '{{path}}'
         helm:
           valueFiles:
             - '{{name}}.yaml'
