@@ -10,7 +10,7 @@ spec:
         selector:
           matchLabels:
           argocd.argoproj.io/secret-type: cluster # Only remote cluster have this label. Once we have a self-manage argo, we can do it with our own label to exclude some clsuter.
-      git:
+    - git:
         repoURL: https://github.com/philippeVV/argocd-appset.git
         revision: HEAD
         directories:
