@@ -34,7 +34,7 @@ spec:
       source:
         repoURL: https://github.com/philippeVV/argocd-appset.git
         path: 'argocd/chart-dependency/nginx'
-        targetRevision: '{{app.chart_version}}'
+        targetRevision: 'main'
         helm:
           valueFiles:
           - '../../../{{path}}/common.yaml'
