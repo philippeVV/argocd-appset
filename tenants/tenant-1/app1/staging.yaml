@@ -3,3 +3,5 @@ app:
   name: test
   chart: https://github.com/philippeVV/nginx-helmchart.git
   chart_version: 'main'
+values: |
+  name: tes1

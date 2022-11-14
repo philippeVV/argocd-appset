@@ -37,7 +37,7 @@ spec:
         targetRevision: '{{app.chart_version}}'
         helm:
           values: |-
-            {{app}}
+            {{values}}
 
       destination:
         server: '{{server}}' # 'server' field of the secret
