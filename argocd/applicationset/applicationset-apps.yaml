@@ -39,9 +39,8 @@ spec:
           valueFiles:
           - '../../../{{path}}/common.yaml'
           - '../../../{{path}}/{{env-fileName}}.yaml'
-          values: |
-            app:
-              name: hoho
+          values: 
+          - app.name = hoho
 
       destination:
         server: '{{server}}' # 'server' field of the secret
