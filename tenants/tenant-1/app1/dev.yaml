@@ -1,5 +1,5 @@
 ---
 app:
-  name: test
+  name: test1
   chart: https://github.com/philippeVV/nginx-helmchart.git
   chart_version: '0.0.1'

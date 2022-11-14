@@ -35,6 +35,11 @@ spec:
         repoURL: '{{app.chart}}'
         path: './chart/'
         targetRevision: '{{app.chart_version}}'
+        helm:
+          valueFiles:
+          - '{{path}}/common.yaml}}'
+          - '{{path}}/{{path.filename}}'
+
       destination:
         server: '{{server}}' # 'server' field of the secret
         namespace: '{{path[1]}}'
