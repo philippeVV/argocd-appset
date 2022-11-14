@@ -22,9 +22,8 @@ spec:
     spec:
       project: "default"
       source:
-        chart: nginx-helmchart'
         repoURL: https://github.dev/philippeVV/nginx-helmchart
-        targetRevision: '0.0.1'
+        targetRevision: 'main'
       destination:
         server: '{{server}}' # 'server' field of the secret
         namespace: '{{path[1]}}'
