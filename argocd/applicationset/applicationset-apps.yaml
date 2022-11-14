@@ -32,12 +32,13 @@ spec:
     spec:
       project: "default"
       source:
-        repoURL: '{{app.chart}}'
-        path: './chart/'
+        repoURL: https://github.com/philippeVV/argocd-appset.git
+        path: 'argocd/chart-dependency/nginx'
         targetRevision: '{{app.chart_version}}'
         helm:
-          values: |-
-            {{values}}
+          valueFiles:
+          - '{{path}}/common.yaml'
+          - '{{path}}/{{env-fileName}}.yaml'
 
       destination:
         server: '{{server}}' # 'server' field of the secret
