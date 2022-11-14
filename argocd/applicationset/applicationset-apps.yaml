@@ -24,7 +24,7 @@ spec:
       source:
         chart: nginx-helmchart
         repoURL: https://github.com/philippeVV/argocd-appset.git/argocd
-        targetRevision: "1.0"
+        targetRevision: 'toto'
         path: '{{path}}'
         helm:
           valueFiles:
