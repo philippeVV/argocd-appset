@@ -36,9 +36,8 @@ spec:
         path: './chart/'
         targetRevision: '{{app.chart_version}}'
         helm:
-          valueFiles:
-          - '{{path}}/common.yaml}}'
-          - '{{path}}/{{path.filename}}'
+          values: |-
+            {{app}}
 
       destination:
         server: '{{server}}' # 'server' field of the secret
