@@ -32,7 +32,7 @@ spec:
     spec:
       project: "default"
       source:
-        repoURL: https://github.com/philippeVV/argocd-appset.git
+        repoURL: https://github.com/philippeVV/argocd-appset.git # gitops
         path: 'argocd/chart-dependency/nginx'
         targetRevision: 'main'
         helm:
