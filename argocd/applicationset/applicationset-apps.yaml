@@ -24,7 +24,7 @@ spec:
       source:
         repoURL: https://github.dev/philippeVV/nginx-helmchart
         path: './chart/'
-        targetRevision: 'main'
+        targetRevision: '2737ffc4dc728c67ef30e668da9b75bbf4577f84'
       destination:
         server: '{{server}}' # 'server' field of the secret
         namespace: '{{path[1]}}'
