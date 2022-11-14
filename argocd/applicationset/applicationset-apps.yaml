@@ -8,13 +8,13 @@ spec:
     - matrix:
         generators:
           - list:
-            elements:
-            - cluster-name: dev
-              env-fileName: dev
-            - cluster-name: staging
-              env-fileName: staging
-            - cluster-name: production
-              env-fileName: production
+              elements:
+              - cluster-name: dev
+                env-fileName: dev
+              - cluster-name: staging
+                env-fileName: staging
+              - cluster-name: production
+                env-fileName: production
           - matrix:
               generators:
                 - clusters:
