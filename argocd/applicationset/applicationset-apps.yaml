@@ -22,7 +22,7 @@ spec:
     spec:
       project: "default"
       source:
-        chart: nginx-helmchart
+        #chart: nginx-helmchart
         repoURL: https://github.com/philippeVV/nginx-helmchart
         targetRevision: HEAD
         path: '{{path}}'
