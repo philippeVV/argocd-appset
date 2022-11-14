@@ -10,25 +10,22 @@ spec:
           - clusters:
               selector:
                 matchLabels:
-                  argocd.argoproj.io/secret-type: cluster
+                  env: dev
           - git:
               repoURL: https://github.com/philippeVV/argocd-appset.git
               revision: HEAD
-              directories:
-              - path: 'tenants/**/*'
+              files:
+              - path: 'tenants/**/dev.yaml'
+
   template:
     metadata:
       name: '{{name}}-{{path.basename}}' # 'name' field of the Secret
     spec:
       project: "default"
       source:
-        chart: 'https://github.com/philippeVV/nginx-helmchart'
-        repoURL: https://github.com/philippeVV/argocd-appset.git/argocd
-        targetRevision: '9f3491a85c54c6a0688ef4b5aaad47b77b7c253f'
-        path: '{{path}}'
-        helm:
-          valueFiles:
-            - '{{name}}.yaml'
+        chart: nginx-helmchart'
+        repoURL: https://github.dev/philippeVV/nginx-helmchart
+        targetRevision: '0.0.1'
 
 
       destination:
