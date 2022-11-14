@@ -28,3 +28,6 @@ spec:
       destination:
         server: '{{server}}' # 'server' field of the secret
         namespace: '{{path[1]}}'
+      syncPolicy:
+        automated:
+          prune: true
