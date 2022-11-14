@@ -23,7 +23,7 @@ spec:
       project: "default"
       source:
         repoURL: https://github.dev/philippeVV/nginx-helmchart
-        path: './'
+        path: ''
         targetRevision: 'main'
       destination:
         server: '{{server}}' # 'server' field of the secret
