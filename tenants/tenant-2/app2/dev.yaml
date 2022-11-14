@@ -1,4 +1,4 @@
 ---
 app:
   chart: https://github.com/philippeVV/nginx-helmchart.git
-  chart_version: '0.0.1'
+  chart_version: 'main'
