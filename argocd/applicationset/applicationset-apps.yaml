@@ -22,7 +22,7 @@ spec:
     spec:
       project: "default"
       source:
-        repoURL: https://github.dev/philippeVV/nginx-helmchart
+        repoURL: https://github.com/philippeVV/nginx-helmchart.git
         path: './chart/'
         targetRevision: '0.0.1'
       destination:
