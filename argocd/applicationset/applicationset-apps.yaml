@@ -23,7 +23,7 @@ spec:
       project: "default"
       source:
         chart: https://github.com/philippeVV/nginx-helmchart
-        repoURL: https://github.com/philippeVV/argocd-appset.git
+        repoURL: https://github.com/philippeVV/argocd-appset.git/argocd
         targetRevision: HEAD
         path: {{path}}
         helm:
