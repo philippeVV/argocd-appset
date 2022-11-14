@@ -22,10 +22,10 @@ spec:
     spec:
       project: "default"
       source:
-        chart: nginx-helmchart
+        chart: https://github.com/philippeVV/nginx-helmchart
         repoURL: https://github.com/philippeVV/argocd-appset.git/argocd
         targetRevision: HEAD
-        path: {{path}}
+        path: '{{path}}'
         helm:
           valueFiles:
             - '{{name}}.yaml'
