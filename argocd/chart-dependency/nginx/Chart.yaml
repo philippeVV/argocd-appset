@@ -6,4 +6,4 @@ version: 0.1.0
 dependencies:
 - name: nginx-helmchart
   version: main
-  repository: https://github.com/philippeVV/nginx-helmchart.git
+  repository: https://philippevv.github.io/nginx-helmchart/
