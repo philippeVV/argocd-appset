@@ -7,37 +7,25 @@ spec:
   generators:
     - matrix:
         generators:
-          - clusters:
-              selector:
-                matchLabels:
-                  env: dev
-          - git:
-              repoURL: https://github.com/philippeVV/argocd-appset.git
-              revision: HEAD
-              files:
-              - path: 'tenants/**/dev.yaml'
-    - matrix:
-        generators:
-          - clusters:
-              selector:
-                matchLabels:
-                  env: staging
-          - git:
-              repoURL: https://github.com/philippeVV/argocd-appset.git
-              revision: HEAD
-              files:
-              - path: 'tenants/**/staging.yaml'
-    - matrix:
-        generators:
-          - clusters:
-              selector:
-                matchLabels:
-                  env: production
-          - git:
-              repoURL: https://github.com/philippeVV/argocd-appset.git
-              revision: HEAD
-              files:
-              - path: 'tenants/**/production.yaml'
+          - list:
+            elements:
+            - cluster-name: dev
+              env-fileName: dev
+            - cluster-name: staging
+              env-fileName: staging
+            - cluster-name: production
+              env-fileName: production
+          - matrix:
+              generators:
+                - clusters:
+                    selector:
+                      matchLabels:
+                        env: '{{cluster-name}}'
+                - git:
+                    repoURL: https://github.com/philippeVV/argocd-appset.git
+                    revision: HEAD
+                    files:
+                    - path: 'tenants/**/{{env-fileName}}.yaml'
   template:
     metadata:
       name: '{{name}}-{{path.basename}}' # 'name' field of the Secret
