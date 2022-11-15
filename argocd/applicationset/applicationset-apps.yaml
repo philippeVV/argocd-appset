@@ -37,7 +37,7 @@ spec:
         targetRevision: 'main'
         helm:
           valueFiles:
-          #- '../../../{{path}}/common.yaml'
+          - '../../../{{path}}/common.yaml'
           - '../../../{{path}}/{{env-fileName}}.yaml'
 
       destination:
