@@ -1,3 +1,4 @@
 ---
-app:
-  name: test1
+nginx-helmchart:
+  app:
+    name: test1
