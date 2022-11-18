@@ -10,7 +10,9 @@ spec:
             - clusters:
                 selector:
                   matchLabels:
-                    env: '{{cluster-name}}'
+                    - env: dev
+                    - env: staging
+                    - env: production
             - git:
                 repoURL: https://github.com/philippeVV/argocd-appset.git
                 revision: HEAD
