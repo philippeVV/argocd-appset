@@ -10,9 +10,7 @@ spec:
             - clusters:
                 selector:
                   matchLabels:
-                    - env: dev
-                    - env: staging
-                    - env: production
+                    argocd.argoproj.io/secret-type: cluster
             - git:
                 repoURL: https://github.com/philippeVV/argocd-appset.git
                 revision: HEAD
