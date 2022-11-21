@@ -1,0 +1,3 @@
+nginx-helmchart:
+  app:
+    name: test2
