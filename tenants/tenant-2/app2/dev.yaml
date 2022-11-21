@@ -1,6 +1,6 @@
 ---
 nginx-helmchart:
   app:
-    name: test1
+    name: test2
 
 
