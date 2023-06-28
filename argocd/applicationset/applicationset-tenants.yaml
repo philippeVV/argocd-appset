@@ -7,7 +7,7 @@ spec:
   generators:
     - matrix:
         generators:
-          - clusters:
+          - clusters: {}
               # selector:
               #   matchLabels:
               #     argocd.argoproj.io/secret-type: cluster # Only remote cluster have this label. Once we have a self-manage argo, we can do it with our own label to exclude some clsuter.
